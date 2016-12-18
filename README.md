@@ -5,4 +5,4 @@ A custom WordPress theme for www.markadamfoster.com, built using the Understrap 
 ## For Development
 
 1. have MAMP running
-2. fun `$ gulp watch-bs` from the theme directory. 
+2. run `$ gulp watch-bs` from the theme directory. 
