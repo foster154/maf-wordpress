@@ -125,3 +125,5 @@ if ( ! function_exists( 'all_excerpts_get_more_link' ) ) {
 	}
 }
 add_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
+
+show_admin_bar( false );

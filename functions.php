@@ -7,6 +7,7 @@
 
 /**
  * Theme setup and custom theme supports.
+ * MAKE ALL CUSTOMIZATIONS HERE.
  */
 require get_template_directory() . '/inc/setup.php';
 
