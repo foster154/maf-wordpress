@@ -31,11 +31,11 @@ nav.navbar {
   a {
     color: white;
     font-weight: 300;
-    transition: transform .2s ease-in;
+    transition: color .2s ease-in;
   }
 
   a:hover {
-    transform: scale(1.1);
+    color: $orange;
   }
 
   li.current-menu-item{

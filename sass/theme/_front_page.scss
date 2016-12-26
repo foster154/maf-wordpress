@@ -2,12 +2,54 @@
 //                                  Front Page
 // =============================================================================
 
-section.hero {
-  background-color: $dkBlue;
-  color: white;
-  font-size: 38px;
-  font-weight: 300;
-  text-align: center;
-  height: 450px;
-  padding-top: 125px;
+body.home {
+  background-color: #efeeee;
+
+  // hero section
+
+  section.hero {
+    background-color: $dkBlue;
+    color: white;
+    font-size: 38px;
+    font-weight: 300;
+    text-align: center;
+    height: 450px;
+    padding-top: 140px;
+  }
+
+  // testimontials
+
+  section.fp-testamonials {
+    background-color: $darkerBlue;
+    color: #e0e0e0;
+    font-weight: 300;
+    padding: 30px;
+    font-size: 20px;
+
+    .fp-testamonials-wrapper {
+      width: 800px;
+      max-width: 90%;
+      margin: 0 auto;
+      position: relative;
+
+      img {
+        position: absolute;
+        height: 120%;
+        left: -36px;
+        top: -8px;
+      }
+
+      .quote {
+        z-index: 1;
+        opacity: .99;
+        @media screen and (max-width: 800px) {
+          font-size: .8em;
+        }
+        .quote-by {
+          float: right;
+          font-size: .9em;
+        }
+      }
+    }
+  }
 }
