@@ -9,7 +9,11 @@
 
 
 // Any additional imported files //
-@import "theme/theme";  // <--------- Thats where you can add your own design. Thats your part!
+@import "theme/shared";  // <--------- Thats where you can add your own design. Thats your part!
 @import "theme/typography";
 @import "theme/nav";
 @import "theme/front_page";
+@import "theme/front_page_tree";
+@import "theme/about";
+@import "theme/articles";
+@import "theme/contact";

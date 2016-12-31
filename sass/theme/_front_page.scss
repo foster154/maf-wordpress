@@ -3,10 +3,32 @@
 // =============================================================================
 
 body.home {
-  background-color: #efeeee;
+  a.fp-button {
+    display: block;
+    text-align: center;
+    width: 250px;
+    max-width: 96%;
+    margin: 10px auto;
+    font-weight: 200;
+    font-size: 22px;
+    padding: 10px;
+    border: 1px solid $orange;
+    border-radius: 3px;
+    transition: background-color .5s, color .5s ease-out;
+
+    @media screen and (max-width: 550px) {
+      font-size: 18px;
+    }
+  }
+
+  a.fp-button:hover,
+  a.fp-button:active {
+    text-decoration: none;
+    color: white;
+    background-color: $orange;
+  }
 
   // hero section
-
   section.hero {
     background-color: $dkBlue;
     color: white;
@@ -15,6 +37,18 @@ body.home {
     text-align: center;
     height: 450px;
     padding-top: 140px;
+    position: relative;
+
+    .hero-text {
+      z-index: 1;
+      opacity: .99;
+    }
+
+    @media screen and (max-width: 500px) {
+      font-size: 28px;
+      height: 300px;
+      padding-top: 100px;
+    }
   }
 
   // testimontials
@@ -50,6 +84,89 @@ body.home {
           font-size: .9em;
         }
       }
+    }
+  }
+
+  .fp-portfolio {
+    padding: 30px;
+    border-bottom: 1px solid #dedede;
+    img {
+      display: block;
+      width: 900px;
+      margin: 0 auto;
+    }
+  }
+
+  .fp-articles {
+    padding: 30px 0;
+    // border: 1px solid yellow;
+    border-bottom: 1px solid #dedede;
+
+    ul {
+      width: 800px;
+      max-width: 96%;
+      padding: 20px 0;
+      margin: 0 auto;
+      list-style: none;
+
+      li {
+        margin-bottom: 30px;
+
+        h3 {
+          font-size: 1.75rem;
+          font-weight: 300;
+          margin-bottom: 10px;
+        }
+
+        .img-wrapper {
+          float: left;
+          margin-right: 15px;
+          height: 150px;
+          width: 28%;
+
+          img {
+            height: 100%;
+            width: 100%;
+          }
+
+          @media screen and (max-width: 720px) {
+            display: none;
+          }
+        }
+
+        .post-content-wrapper {
+          margin-left: 10px;
+          width: 68%;
+          float: right;
+          font-weight: 300;
+
+          @media screen and (max-width: 720px) {
+            width: 96%;
+          }
+
+          .fp-post-read-more {
+            float: right;
+          }
+        }
+
+        a:hover {
+          text-decoration: none;
+        }
+      }
+
+      li:last-child {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .fp-about {
+    padding: 30px 0;
+    img {
+      display: block;
+      width: 700px;
+      max-width: 100%;
+      margin: 0 auto;
     }
   }
 }

@@ -1,0 +1,41 @@
+body.home section.hero {
+  .tree {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 500px;
+    opacity: .2;
+
+    .leaf:nth-of-type(7n) {
+      animation: leaf-grow 2s 1s ease-out backwards;
+      transform-origin: 50% 100%;
+    }
+
+    .leaf:nth-of-type(5n) {
+      animation: leaf-grow 2s 1.5s ease-out backwards;
+      transform-origin: 50% 100%;
+    }
+
+    .leaf {
+      animation: leaf-grow 2s 2s ease-out backwards;
+      transform-origin: 50% 100%;
+    }
+
+    @media screen and (max-width: 500px) {
+      transform: scale(.6);
+      transform-origin: 50% 100%;
+      width: 300px;
+    }
+  }
+}
+
+@keyframes leaf-grow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}

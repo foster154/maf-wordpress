@@ -120,10 +120,20 @@ if ( ! function_exists( 'all_excerpts_get_more_link' ) ) {
 	 */
 	function all_excerpts_get_more_link( $post_excerpt ) {
 
-		return $post_excerpt . ' [...]<p><a class="btn btn-secondary understrap-read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More...',
-		'understrap' ) . '</a></p>';
+		return $post_excerpt . '...';
 	}
 }
 add_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
+
+/**
+ * Filter the except length. Default is 55 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function wpdocs_custom_excerpt_length( $length ) {
+    return 35;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
 show_admin_bar( false );

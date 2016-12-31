@@ -26,8 +26,8 @@ function understrap_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'understrap' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		esc_html_x( '%s', 'post date', 'understrap' ),
+		$time_string
 	);
 
 	$byline = sprintf(
@@ -35,7 +35,7 @@ function understrap_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+	echo '<span class="posted-on">' . $posted_on . '</span>';
 
 }
 endif;
@@ -146,11 +146,11 @@ if ( ! function_exists( 'understrap_post_nav' ) ) :
 						<?php
 
 							if ( get_previous_post_link() ) {
-								previous_post_link( '<button class="nav-previous float-xs-left btn btn-sm btn-secondary">%link</button>', _x( '<i class="fa fa-angle-left" aria-hidden="true"></i>
+								previous_post_link( '<button class="nav-previous">%link</button>', _x( '<i class="fa fa-angle-left" aria-hidden="true"></i>
 &nbsp;%title', 'Previous post link', 'understrap' ) );
 							}
 							if ( get_next_post_link() ) {
-								next_post_link( '<button class="nav-next float-xs-right btn btn-sm btn-secondary">%link</button>',     _x( '%title&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>
+								next_post_link( '<button class="nav-next">%link</button>',     _x( '%title&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i>
 </span>', 'Next post link', 'understrap' ) );
 							}
 						?>

@@ -7,44 +7,46 @@
 
 ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class('clearfix'); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
+	<div class="img-wrapper">
+		<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+	</div>
 
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
-		'</a></h2>' ); ?>
+		<div class="post-content-wrapper">
 
-		<?php if ( 'post' == get_post_type() ) : ?>
+			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
+			'</a></h2>' ); ?>
 
-			<div class="entry-meta">
-				<?php understrap_posted_on(); ?>
-			</div><!-- .entry-meta -->
+			<?php if ( 'post' == get_post_type() ) : ?>
 
-		<?php endif; ?>
+				<div class="entry-meta">
+					<?php understrap_posted_on(); ?>
+				</div><!-- .entry-meta -->
 
-	</header><!-- .entry-header -->
+			<?php endif; ?>
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+			<div class="entry-content">
 
-	<div class="entry-content">
+				<?php
+				the_excerpt();
+				?>
 
-		<?php
-		the_excerpt();
-		?>
+				<a class="read-more-btn" href="<?php echo get_permalink() ?>">
+					Read Article
+				</a>
 
-		<?php
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
-			'after'  => '</div>',
-		) );
-		?>
+				<?php
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
+					'after'  => '</div>',
+				) );
+				?>
+
+		</div>
 
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
 
-		<?php understrap_entry_footer(); ?>
-
-	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->

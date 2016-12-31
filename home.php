@@ -25,6 +25,8 @@ if ( is_front_page() && is_home() ) {
 
 <div class="wrapper" id="wrapper-home">
 
+	<h1>Articles</h1>
+
 	<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row">
@@ -35,7 +37,7 @@ if ( is_front_page() && is_home() ) {
 			<?php if ( 'masonry' === $posts_style ) : ?>
 
 			<div class="card-columns"><?php endif; ?>
-			
+
 				<main class="site-main" id="main">
 
 					<?php if ( have_posts() ) : ?>
