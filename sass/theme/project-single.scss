@@ -1,12 +1,32 @@
+.project-single-page {
+  font-size: 20px;
 
-img.project-featured-image {
-  display: block;
-  margin: 10px auto 30px;
-}
+  h2 {
+    font-size: 46px;
+    margin-bottom: 30px;
+    @media screen and (max-width: 767px) {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+  }
 
-img.project-screenshot {
-  display: block;
-  max-width: 96%;
-  margin: 20px auto;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+  img.project-featured-image {
+    float: right;
+    width: 400px;
+    max-width: 96%;
+    margin: 0 0 15px 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+    @media screen and (max-width: 767px) {
+      float: none;
+      display: block;
+      margin: 0 auto 20px;
+    }
+  }
+
+  img.project-screenshot {
+    display: block;
+    max-width: 96%;
+    margin: 20px auto;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+  }
 }

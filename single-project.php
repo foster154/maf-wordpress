@@ -9,7 +9,7 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<div class="wrapper" id="page-wrapper">
+<div class="wrapper project-single-page" id="page-wrapper">
 
 	<div class="<?php echo esc_html( $container ); ?>" id="content">
 
