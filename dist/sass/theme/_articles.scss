@@ -1,0 +1,111 @@
+// ========================================
+// Articles Listing Page
+// ========================================
+
+body.blog {
+
+  #wrapper-home h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 300;
+  }
+
+  article {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #dedede;
+
+    h2.entry-title {
+      text-align: left;
+      font-size: 1.75rem;
+      font-weight: 300;
+      margin-bottom: 10px;
+      padding: 0;
+    }
+
+    .img-wrapper {
+      float: left;
+      margin-right: 15px;
+      height: 150px;
+      width: 28%;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+
+      @media screen and (max-width: 720px) {
+        display: none;
+      }
+    }
+
+    .post-content-wrapper {
+      margin-left: 10px;
+      width: 68%;
+      float: right;
+      font-weight: 300;
+
+      @media screen and (max-width: 720px) {
+        width: 96%;
+      }
+
+      a.read-more-btn {
+        display: inline-block;
+        text-align: center;
+        width: 180px;
+        max-width: 96%;
+        float: right;
+        font-weight: 200;
+        font-size: 22px;
+        padding: 3px;
+        border: 1px solid $orange;
+        border-radius: 3px;
+        margin: -15px 0 10px;
+        transition: background-color .5s, color .5s ease-out;
+
+        @media screen and (max-width: 550px) {
+          font-size: 18px;
+        }
+      }
+
+      a.read-more-btn:hover,
+      a.read-more-btn:active {
+        text-decoration: none;
+        color: white;
+        background-color: $orange;
+      }
+    }
+  }
+}
+
+// ========================================
+// Single Article Page
+// ========================================
+
+body.single-post {
+  .entry-meta {
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 300;
+  }
+  .wp-post-image {
+    margin: 0 auto;
+    display: block;
+    // margin: 5px 15px 10px 0;
+  }
+  .entry-content {
+    font-size: 22px;
+    font-weight: 300;
+    width: 700px;
+    margin: 50px auto;
+  }
+  .nav-links {
+    button.nav-next {
+      float: right;
+    }
+    button {
+      background-color: white;
+      border: none;
+      font-size: 24px;
+    }
+  }
+}

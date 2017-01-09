@@ -1,0 +1,47 @@
+// =============================================================================
+//                                  Nav Bar
+// =============================================================================
+
+nav.navbar {
+  background-color: $dkBlue;
+
+  a.navbar-brand {
+    color: white;
+
+    .site-name {
+      display: inline-block;
+      font-family: Journal;
+      font-size: 42px;
+      vertical-align: middle;
+      padding-left: 15px;
+    }
+  }
+
+  img.avatar {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+  }
+}
+
+.navbar #main-menu {
+  float: right;
+  margin-top: 22px;
+
+  a {
+    color: white;
+    font-weight: 300;
+    transition: color .2s ease-in;
+  }
+
+  a:hover {
+    color: $orange;
+  }
+
+  li.current-menu-item{
+    a,
+    a:hover {
+      color: $orange;
+    }
+  }
+}
