@@ -137,3 +137,70 @@ function wpdocs_custom_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
 show_admin_bar( false );
+
+// add_action( 'init', 'cptui_register_my_taxes_project_tags' );
+// function cptui_register_my_taxes_project_tags() {
+// 	$labels = array(
+// 		"name" => __( 'Project Tags', '' ),
+// 		"singular_name" => __( 'Project Tag', '' ),
+// 		);
+//
+// 	$args = array(
+// 		"label" => __( 'Project Tags', '' ),
+// 		"labels" => $labels,
+// 		"public" => true,
+// 		"hierarchical" => false,
+// 		"label" => "Project Tags",
+// 		"show_ui" => true,
+// 		"show_in_menu" => true,
+// 		"show_in_nav_menus" => true,
+// 		"query_var" => true,
+// 		"rewrite" => array( 'slug' => 'project_tags', 'with_front' => true, ),
+// 		"show_admin_column" => false,
+// 		"show_in_rest" => false,
+// 		"rest_base" => "",
+// 		"show_in_quick_edit" => false,
+// 	);
+// 	register_taxonomy( "project_tags", array( "project" ), $args );
+//
+// // End cptui_register_my_taxes_project_tags()
+// }
+
+//hook into the init action and call create_topics_nonhierarchical_taxonomy when it fires
+
+add_action( 'init', 'create_project_tags_nonhierarchical_taxonomy', 0 );
+
+function create_project_tags_nonhierarchical_taxonomy() {
+
+// Labels part for the GUI
+
+  $labels = array(
+    'name' => _x( 'Project Tags', 'taxonomy general name' ),
+    'singular_name' => _x( 'Project Tag', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Project Tags' ),
+    'popular_items' => __( 'Popular Project Tags' ),
+    'all_items' => __( 'All Project Tags' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Project Tag' ),
+    'update_item' => __( 'Update Project Tag' ),
+    'add_new_item' => __( 'Add New Project Tag' ),
+    'new_item_name' => __( 'New Project Tag' ),
+    'separate_items_with_commas' => __( 'Separate topics with commas' ),
+    'add_or_remove_items' => __( 'Add or remove tags' ),
+    'choose_from_most_used' => __( 'Choose from the most used tags' ),
+    'menu_name' => __( 'Project Tags' ),
+  );
+
+// Now register the non-hierarchical taxonomy like tag
+
+  register_taxonomy('project_tags','project',array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'project_tag' ),
+  ));
+}

@@ -36,6 +36,16 @@
         padding: 0 10px 10px 10px;
         text-align: left;
       }
+
+      .project-tags {
+        display: flex;
+        justify-content: center;
+        img {
+          height: 36px;
+          width: 36px;
+          margin: 12px 4px 8px;
+        }
+      }
     }
 
     li:nth-child(2n-1) {
