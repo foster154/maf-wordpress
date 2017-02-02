@@ -39,6 +39,130 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div class="entry-content">
 								<?php the_content(); ?>
 
+								<div class="project-links">
+									<?php
+										$liveUrl = get_field('live_url');
+										$codeUrl = get_field('code_url');
+										if ($liveUrl) {
+											echo '<a class="live-site" target="_blank" href="'.$liveUrl.'"><span class="fa fa-desktop"></span>Live Site</a>';
+										}
+										if ($codeUrl) {
+											echo '<a class="code-site" target="_blank" href="'.$codeUrl.'"><span class="fa fa-github"></span>View Code</a>';
+										}
+									?>
+								</div>
+
+
+								<!-- Project tech badges -->
+								<div class="project-tags">
+									<?php
+									$tags = get_the_terms( $post->ID, "project_tags" );
+
+										foreach ( $tags as $tag ) {
+											//echo $tag->name;
+											// if ($tag->name == 'WordPress') {
+											//   echo '<img src="'.get_stylesheet_directory_uri().'/img/project-tags/wordpress.jpg" />';
+											// }
+											switch ($tag->name) {
+												case 'WordPress':
+													echo '<img src="'.get_stylesheet_directory_uri().'/img/project-tags/wordpress.png" />';
+													break;
+												case 'Bootstrap':
+													echo '<img src="'.get_stylesheet_directory_uri().'/img/project-tags/bootstrap.png" />';
+													break;
+												case 'CSS':
+													echo '<img src="'.get_stylesheet_directory_uri().'/img/project-tags/css3.png" />';
+													break;
+												case 'Gulp':
+													echo '<img src="'.get_stylesheet_directory_uri().'/img/project-tags/gulp.png" />';
+													break;
+												case 'HTML':
+													echo '<img src="'.get_stylesheet_directory_uri().'/img/project-tags/html5.png" />';
+													break;
+												case 'jQuery':
+													echo '<img src="'.get_stylesheet_directory_uri().'/img/project-tags/jquery.png" />';
+													break;
+												case 'JavaScript':
+													echo '<img src="'.get_stylesheet_directory_uri().'/img/project-tags/js.png" />';
+													break;
+												case 'Mongo DB':
+													echo '<img src="'.get_stylesheet_directory_uri().'/img/project-tags/mongo.png" />';
+													break;
+												case 'React':
+													echo '<img src="'.get_stylesheet_directory_uri().'/img/project-tags/react.png" />';
+													break;
+												case 'Redux':
+													echo '<img src="'.get_stylesheet_directory_uri().'/img/project-tags/redux.png" />';
+													break;
+												case 'Ruby on Rails':
+													echo '<img src="'.get_stylesheet_directory_uri().'/img/project-tags/rubyonrails.png" />';
+													break;
+												case 'SASS':
+													echo '<img src="'.get_stylesheet_directory_uri().'/img/project-tags/sass.png" />';
+													break;
+												case 'Webpack':
+													echo '<img src="'.get_stylesheet_directory_uri().'/img/project-tags/webpack.png" />';
+													break;
+											}
+										}
+									?>
+								</div>
+
+								<div class="project-screenshots">
+									<?php
+										$screenshot1 = get_field('screenshot1');
+										$screenshot2 = get_field('screenshot2');
+										$screenshot3 = get_field('screenshot3');
+										$screenshot4 = get_field('screenshot4');
+										$screenshot5 = get_field('screenshot5');
+										if( !empty($screenshot1) ): ?>
+											<img
+												src="<?php echo $screenshot1['url']; ?>"
+												alt="<?php echo $screenshot1['alt']; ?>"
+												class="aligncenter size-full wp-image-82 project-screenshot"
+												width="1000"
+												height="2720" />
+										<?php endif; ?>
+
+										<?php if( !empty($screenshot2) ): ?>
+											<img
+												src="<?php echo $screenshot2['url']; ?>"
+												alt="<?php echo $screenshot2['alt']; ?>"
+												class="aligncenter size-full wp-image-82 project-screenshot"
+												width="1000"
+												height="2720" />
+										<?php endif; ?>
+
+										<?php if( !empty($screenshot3) ): ?>
+											<img
+												src="<?php echo $screenshot3['url']; ?>"
+												alt="<?php echo $screenshot3['alt']; ?>"
+												class="aligncenter size-full wp-image-82 project-screenshot"
+												width="1000"
+												height="2720" />
+										<?php endif; ?>
+
+										<?php if( !empty($screenshot4) ): ?>
+											<img
+												src="<?php echo $screenshot4['url']; ?>"
+												alt="<?php echo $screenshot4['alt']; ?>"
+												class="aligncenter size-full wp-image-82 project-screenshot"
+												width="1000"
+												height="2720" />
+										<?php endif; ?>
+
+										<?php if( !empty($screenshot5) ): ?>
+											<img
+												src="<?php echo $screenshot5['url']; ?>"
+												alt="<?php echo $screenshot5['alt']; ?>"
+												class="aligncenter size-full wp-image-82 project-screenshot"
+												width="1000"
+												height="2720" />
+										<?php endif; ?>
+
+									?>
+								</div>
+
 								<?php
 								wp_link_pages( array(
 									'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
